@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import { getEvents } from './apiCalls/apiCalls';
-import { Navbar } from './Navbar/Navbar'
+import { getEvents } from '../../apiCalls/apiCalls';
+import { Navbar } from '../Navbar/Navbar'
 
 class App extends Component {
-
   async componentDidMount() {
     const events = await getEvents()
     console.log(events)
