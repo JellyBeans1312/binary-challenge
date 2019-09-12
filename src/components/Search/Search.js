@@ -21,7 +21,7 @@ export class Search extends Component {
     try {
       const searchResults = await searchEvent(this.state.search)
       console.log(searchResults)
-      // this.props.addEvents(searchResults) 
+      this.props.addEvents(searchResults) 
     } catch(error) {
       console.log(error)
       this.setState({ error: 'There was a problem getting your search results'})

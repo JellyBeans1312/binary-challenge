@@ -4,7 +4,8 @@ import { getEvents } from '../../apiCalls/apiCalls';
 import { Navbar } from '../Navbar/Navbar';
 import { connect } from 'react-redux';
 import { addEvents } from '../../actions';
-import { Search } from '../Search/Search'
+import Search from '../Search/Search'
+// import { EventContainer } from '../EventContainer/EventContainer';
 
 class App extends Component {
   constructor() {
@@ -26,6 +27,7 @@ class App extends Component {
         <Search/>
       </header>
       <Navbar />
+      {/* <EventContainer /> */}
     </div>
   );
   }
