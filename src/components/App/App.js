@@ -2,12 +2,21 @@ import React, { Component } from 'react';
 import './App.css';
 import { getEvents } from '../../apiCalls/apiCalls';
 import { Navbar } from '../Navbar/Navbar'
+import { connect } from 'react-redux';
+import { addEvents } from '../../actions'
 
 class App extends Component {
+  constructor() {
+    super();
+
+  }
+
   async componentDidMount() {
     const events = await getEvents()
-    console.log(events)
+    this.props.addEvents(events)
+    console.log(this.props)
   }
+
   render() {
     return (
 
@@ -20,4 +29,8 @@ class App extends Component {
   }
 }
 
-export default App;
+export const mapDispatchToProps = (dispatch) => ({
+  addEvents: events => dispatch(addEvents(events))
+});
+
+export default connect(null, mapDispatchToProps)(App);
