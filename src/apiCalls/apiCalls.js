@@ -14,6 +14,9 @@ export const getEvents = async () => {
     return result.results
   } catch(error) {
     console.log(error);
-    
   }
+}
+
+export const searchEvent = async () => {
+  
 }

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import { getEvents } from '../../apiCalls/apiCalls';
-import { Navbar } from '../Navbar/Navbar'
+import { Navbar } from '../Navbar/Navbar';
 import { connect } from 'react-redux';
-import { addEvents } from '../../actions'
+import { addEvents } from '../../actions';
+import { Search } from '../Search/Search'
 
 class App extends Component {
   constructor() {
@@ -14,7 +15,6 @@ class App extends Component {
   async componentDidMount() {
     const events = await getEvents()
     this.props.addEvents(events)
-    console.log(this.props)
   }
 
   render() {
@@ -22,8 +22,10 @@ class App extends Component {
 
     <div className="App">
       <header className="App-header">
-      <Navbar />
+        <h1>something</h1>
+        <Search/>
       </header>
+      <Navbar />
     </div>
   );
   }
