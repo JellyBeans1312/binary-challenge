@@ -17,6 +17,22 @@ export const getEvents = async () => {
   }
 }
 
-export const searchEvent = async () => {
-  
+export const searchEvent = async (searchParam) => {
+  try {
+    const options = {
+      method: 'GET',
+      headers: {
+        Authorization: 'Bearer qJhnqW5Rsc36m6cUYXZyCaV2BaFNB0QoGpr4fmk_',
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      }
+    }
+    
+    const response = await fetch(`https://api.predicthq.com/v1/events/?q=${searchParam}/`, options)
+    const result = await response.json()
+    return result.results
+
+  } catch(error) {
+    throw new Error(error)
+  }
 }
