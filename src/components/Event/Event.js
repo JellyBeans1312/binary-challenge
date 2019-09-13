@@ -10,10 +10,8 @@ export class Event extends Component {
   }
   componentDidMount = async () => {
     const { location } = this.props
-    console.log(location)
-    console.log(location[1].toString())
-    const formattedAddress = await getAddress(location[1].toString(), location[0].toString())
-    console.log(formattedAddress)
+    const geoResults = await getAddress(location[1], location[0])
+    const formattedAddress = geoResults.find(address => address)
     this.setState({ formattedAddress })
   }
   
@@ -22,7 +20,7 @@ export class Event extends Component {
   }
 
   render() {
-    const { title, description, address } = this.props 
+    const { title, description } = this.props 
     const { formattedAddress } = this.state
     return (
       <section>
@@ -30,11 +28,8 @@ export class Event extends Component {
         <h4>{title}</h4>
         <p>{!description && 'No available Description'}</p>
         <p>{description}</p>
-        <p>{!formattedAddress && 'No available Location'}</p>
+        <p>{!formattedAddress && 'No available Address'}</p>
         <p>{formattedAddress}</p>
-        <p>{!address && 'No available Address'}</p>
-        <p>{address}</p>
-
       </section>
     )
   }

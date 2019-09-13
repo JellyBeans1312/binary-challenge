@@ -40,8 +40,10 @@ export const searchEvent = async (searchParam) => {
 export const getAddress = async (lat, long) => {
   try {
     const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=AIzaSyDPPlNyjATG8sQnfsdg45ln7kUoyFH24m0`)
-    const result = response.json();
-    return result.formatted_address
+    const result = await response.json();
+    return result.results.map(result => {
+      return result.formatted_address
+    });
   } catch(error) {
     console.log(error)
   }

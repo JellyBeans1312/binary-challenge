@@ -9,7 +9,6 @@ export const EventContainer = ({ events }) => {
       description={event.description}
       category={event.category}
       location={event.location}
-      address={event.entities.formatted_address}
     />
   })
   return ( 
