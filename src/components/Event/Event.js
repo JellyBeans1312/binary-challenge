@@ -25,13 +25,12 @@ export class Event extends Component {
   }
 
   render() {
-    const { title, description} = this.props 
+    const { title } = this.props 
     const { formattedAddress, trimDesc } = this.state
     return (
       <section>
         <h4>{!title && 'No available title'}</h4>
         <h4>{title}</h4>
-        <p>{!description && 'No available Description'}</p>
         <p>{trimDesc}</p>
         <p>{!formattedAddress && 'No available Address'}</p>
         <p>{formattedAddress}</p>
