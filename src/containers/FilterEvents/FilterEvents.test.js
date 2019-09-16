@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import { FilterEvents }from "./FilterEvents";
+import { FilterEvents, mapStateToProps }from "./FilterEvents";
 
 describe("FilterEvents ", () => {
   let wrapper;
@@ -38,4 +38,18 @@ describe("FilterEvents ", () => {
     expect(wrapper.state("filteredEvents")).toEqual([]);
     expect(wrapper.state("filterButton")).toEqual("");
   });
-});
+
+  describe('mapStateToProps', () => {
+    it('should return an array of events', () => {
+      const mockState = {
+        events: [{ title: "mirrorland"}]
+      };
+      const expected = {
+        events: [{ title: "mirrorland"}]
+      };
+      const mappedProps = mapStateToProps(mockState);
+
+      expect(mappedProps).toEqual(expected);
+    });
+    });
+  });
