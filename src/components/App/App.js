@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import { getEvents, getLocation } from '../../apiCalls/apiCalls';
+import { getEvents } from '../../apiCalls/apiCalls';
 import { Navbar } from '../Navbar/Navbar';
 import { connect } from 'react-redux';
 import { addEvents } from '../../actions';
-import Search from '../Search/Search'
-import EventContainer from '../EventContainer/EventContainer';
-import { SearchLocation } from '../../containers/SearchLocation/SearchLocation';
+import Search from '../Search/Search';
 
 class App extends Component {
   constructor() {
@@ -26,10 +24,8 @@ class App extends Component {
       <header className="App-header">
         <h1>something</h1>
         <Search/>
-        <SearchLocation/>
       </header>
       <Navbar />
-      <EventContainer />
     </div>
   );
   }
