@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import { getEvents } from '../../apiCalls/apiCalls';
-import { Navbar } from '../Navbar/Navbar';
+import { Navbar } from '../../components/Navbar/Navbar';
 import { connect } from 'react-redux';
 import { addEvents } from '../../actions';
-import Search from '../../containers/Search/Search';
+import Search from '..//Search/Search';
 
 export class App extends Component {
   constructor() {

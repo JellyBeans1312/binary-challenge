@@ -1,7 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { App } from './App';
+import { App, mapDispatchToProps } from './App';
 import { getEvents } from '../../apiCalls/apiCalls'
+import { addEvents } from '../../actions';
 
 jest.mock('../../apiCalls/apiCalls')
 
@@ -29,6 +30,17 @@ describe('App', () => {
 
   it('should call getEvents', async () => {
     expect(getEvents).toHaveBeenCalled()
+  });
+
+  describe('mapDispatchToProps', () => {
+    it('calls dispatch with addEvents action', () => {
+      const mockDispatch = jest.fn()
+      const actionToDispatch = addEvents(mockEvents)
+      const mappedProps = mapDispatchToProps(mockDispatch)
+      mappedProps.addEvents(mockEvents)
+
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+    });
   })
 });
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, Route } from 'react-router-dom'
 import  FilterEvents   from '../../containers/FilterEvents/FilterEvents'
-import  EventContainer  from '../EventContainer/EventContainer';
+import  EventContainer  from '../../containers/EventContainer/EventContainer';
 import  SearchLocation  from '../../containers/SearchLocation/SearchLocation';
 
 export const Navbar = () => {

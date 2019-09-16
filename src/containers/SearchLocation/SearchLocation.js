@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { getLocation, getEventsByLocation } from '../../apiCalls/apiCalls';
 import { addEvents } from '../../actions/'
 import { connect } from 'react-redux';
-import EventContainer  from '../../components/EventContainer/EventContainer';
+import EventContainer  from '../EventContainer/EventContainer';
 
 export class SearchLocation extends Component {
   constructor() {

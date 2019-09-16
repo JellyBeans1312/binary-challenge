@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'; 
-import { Event } from '../Event/Event'
+import { Event } from '../../components/Event/Event'
 
 export const EventContainer = ({ events }) => {
   if(!events) {
