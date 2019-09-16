@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { getLocation, getEventsByLocation } from '../../apiCalls/apiCalls';
 import { addEvents } from '../../actions/'
 import { connect } from 'react-redux';
+import EventContainer  from '../../components/EventContainer/EventContainer';
 
 export class SearchLocation extends Component {
   constructor() {
@@ -22,8 +23,9 @@ export class SearchLocation extends Component {
     e.preventDefault()
     try {
       const location = await getLocation(city, state)
-      const searchResults = await getEventsByLocation(location.geometry.location.lat, location.geometry.location.lng)
-      this.props.addEvents(searchResults) 
+      const trimLocation = location[0].geometry.location
+      const searchResults = await getEventsByLocation(trimLocation.lat, trimLocation.lng)
+      this.props.addEvents(searchResults.results) 
     } catch(error) {
       this.setState({ error: 'There was a problem getting your search results'})
     }
@@ -31,23 +33,26 @@ export class SearchLocation extends Component {
 
   render() {
     return (
-      <form onSubmit={this.searchEventByLocation}>
-        <input
-          type='text'
-          placeholder='Enter a city'
-          value={this.state.city}
-          onChange={this.onChange}
-          name='city'
-        />
-        <input
-          type='text'
-          placeholder='Enter a state (CO format)'
-          value={this.state.state}
-          onChange={this.onChange}
-          name='state'
-        />
-        <button>Search by location</button>
-      </form>
+      <section>
+        <form onSubmit={this.searchEventByLocation}>
+          <input
+            type='text'
+            placeholder='Enter a city'
+            value={this.state.city}
+            onChange={this.onChange}
+            name='city'
+          />
+          <input
+            type='text'
+            placeholder='Enter a state (CO format)'
+            value={this.state.state}
+            onChange={this.onChange}
+            name='state'
+          />
+          <button>Search by location</button>
+        </form>
+        <EventContainer/>
+      </section>
     )
   }
 }
