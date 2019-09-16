@@ -4,9 +4,9 @@ import { getEvents } from '../../apiCalls/apiCalls';
 import { Navbar } from '../Navbar/Navbar';
 import { connect } from 'react-redux';
 import { addEvents } from '../../actions';
-import Search from '../Search/Search';
+import Search from '../../containers/Search/Search';
 
-class App extends Component {
+export class App extends Component {
   constructor() {
     super();
 

@@ -1,9 +1,34 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import { shallow } from 'enzyme';
+import { App } from './App';
+import { getEvents } from '../../apiCalls/apiCalls'
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+jest.mock('../../apiCalls/apiCalls')
+
+describe('App', () => {
+  let wrapper;
+  const mockEvents = [
+    { title: "something", category: 'concert', location: [{lat: 23, long: 234}] }
+  ];
+
+  beforeEach(() => {
+     wrapper = shallow(
+      <App
+        events={mockEvents}
+      />
+    )
+
+    getEvents.mockImplementation(() => {
+      return Promise.resolve({mockEvents})
+    });
+  })
+
+  it('should match snapshot', () => {
+    expect(wrapper).toMatchSnapshot() 
+  });
+
+  it('should call getEvents', async () => {
+    expect(getEvents).toHaveBeenCalled()
+  })
 });
+
