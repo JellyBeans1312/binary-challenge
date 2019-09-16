@@ -71,7 +71,7 @@ export const getEventsByLocation = async (lat, long) => {
   try {
     const response = await fetch(`https://api.predicthq.com/v1/events/?within=20mi@${lat},${long}/`, options)
     const result = await response.json()
-    console.log(result)
+    return result
   } catch(error) {
     console.log(error)
   }
