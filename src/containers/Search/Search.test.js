@@ -1,7 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Search } from './Search'
+import { Search, mapDispatchToProps } from './Search'
 import { searchEvent } from "../../apiCalls/apiCalls";
+import { addEvents } from '../../actions';
 
 jest.mock('../../apiCalls/apiCalls')
 
@@ -49,5 +50,16 @@ describe("Search", () => {
     await wrapper.instance().searchEvent(mockEvent);
 
     expect(wrapper.state("error")).toEqual("There was a problem getting your search results");
+  });
+
+  describe('mapDispatchToProps', () => {
+    it('should dispatch addEvents to props', () => {
+      const mockDispatch = jest.fn()
+      const actionToDispatch = addEvents(mockEvents)
+      const mappedProps = mapDispatchToProps(mockDispatch)
+      mappedProps.addEvents(mockEvents)
+
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+    });
   });
 })

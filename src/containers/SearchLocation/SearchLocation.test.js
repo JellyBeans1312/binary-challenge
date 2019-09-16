@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { SearchLocation } from './SearchLocation';
+import { SearchLocation, mapDispatchToProps } from './SearchLocation';
 import { getLocation, getEventsByLocation }  from '../../apiCalls/apiCalls';
-
+import { addEvents } from '../../actions'
 jest.mock('../../apiCalls/apiCalls')
 
 describe('SearchLocation', () => {
@@ -12,7 +12,7 @@ describe('SearchLocation', () => {
   const mockAddEvents = jest.fn()
 
   const mockEvents = [
-    { title: "something", category: 'concert', location: [{lat: 23, long: 234}] }
+    { title: "something", category: 'concert', location: [{lat: 3 , long: 234}] }
   ];
 
   beforeEach(() => {
@@ -23,7 +23,7 @@ describe('SearchLocation', () => {
       />
     )
     getLocation.mockImplementation(() => {
-      return Promise.resolve([{address: 'something 123 something else drive'}])
+      return Promise.resolve([{address: 'something 123 something else drive', geometry: {location: 2}}])
     });
   });
 
@@ -61,8 +61,18 @@ describe('SearchLocation', () => {
   });
 
   it('should call add events when searchEventByLocation is invoked', () => {
-  
     wrapper.instance().searchEventByLocation(mockEvent)
     expect(mockAddEvents).toHaveBeenCalled()
-  })
-})
+  });
+
+  describe('mapDispatchToProps', () => {
+    it('should call dispatch with addEvents or something like that', () => {
+      const mockDispatch = jest.fn()
+      const actionToDispatch = addEvents(mockEvents)
+      const mappedProps = mapDispatchToProps(mockDispatch)
+      mappedProps.addEvents(mockEvents)
+
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+    });
+  });
+});
