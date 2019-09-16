@@ -9,7 +9,8 @@ export class SearchLocation extends Component {
     super();
     this.state = {
       city: '',
-      state: ''
+      state: '',
+      error: ''
     }
   }
 
