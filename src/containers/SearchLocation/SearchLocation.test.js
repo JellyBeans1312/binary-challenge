@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { SearchLocation } from './SearchLocation';
+import { SearchLocation, mapDispatchToProps } from './SearchLocation';
 import { getLocation, getEventsByLocation }  from '../../apiCalls/apiCalls';
-
+import { addEvents } from '../../actions'
 jest.mock('../../apiCalls/apiCalls')
 
 describe('SearchLocation', () => {
@@ -64,5 +64,16 @@ describe('SearchLocation', () => {
   
     wrapper.instance().searchEventByLocation(mockEvent)
     expect(mockAddEvents).toHaveBeenCalled()
-  })
-})
+  });
+
+  describe('mapDispatchToProps', () => {
+    it('should call dispatch with addEvents or something like that', () => {
+      const mockDispatch = jest.fn()
+      const actionToDispatch = addEvents(mockEvents)
+      const mappedProps = mapDispatchToProps(mockDispatch)
+      mappedProps.addEvents(mockEvents)
+
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+    });
+  });
+});
