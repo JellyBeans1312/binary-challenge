@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { EventContainer } from './EventContainer';
+import { EventContainer, mapStateToProps } from './EventContainer';
 
 describe('EventContainer', () => {
   let wrapper;
@@ -25,4 +25,18 @@ describe('EventContainer', () => {
     shallow(<EventContainer events={undefined}/>)
     expect(wrapper).toEqual({})
   });
+
+  describe('mapStateToProps', () => {
+    it('should return an array of events', () => {
+      const mockState = {
+        events: [{ title: "mirrorland"}]
+      };
+      const expected = {
+        events: [{ title: "mirrorland"}]
+      };
+      const mappedProps = mapStateToProps(mockState);
+
+      expect(mappedProps).toEqual(expected);
+    });
+  })
 });
