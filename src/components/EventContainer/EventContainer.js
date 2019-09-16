@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import { Event } from '../Event/Event'
 
 export const EventContainer = ({ events }) => {
+  if(!events) {
+    return null
+  }
   const eventCards = events.map(event => {
     return <Event 
       title={event.title}
