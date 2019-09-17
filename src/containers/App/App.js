@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
 import { getEvents } from '../../apiCalls/apiCalls';
-import { Navbar } from '../../components/Navbar/Navbar';
 import { connect } from 'react-redux';
 import { addEvents } from '../../actions';
 import Search from '..//Search/Search';
+import { Navbar } from '../../components/Navbar/Navbar'
 
 export class App extends Component {
-  constructor() {
-    super();
-
-  }
 
   async componentDidMount() {
     const events = await getEvents()
@@ -25,7 +21,7 @@ export class App extends Component {
         <h1>something</h1>
         <Search/>
       </header>
-      <Navbar />
+      <Navbar addEvents={this.props.addEvents}/>
     </div>
   );
   }

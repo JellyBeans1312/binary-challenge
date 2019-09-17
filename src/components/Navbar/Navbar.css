@@ -1,0 +1,14 @@
+.nav {
+  height: 10vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+
+.nav-button {
+  font-size: 2rem;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 70%;
+  margin: auto 0;
+}

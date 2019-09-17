@@ -1,16 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`EventContainer should matchsnapshot 1`] = `
-<Event
-  category="concert"
-  location={
-    Array [
-      Object {
-        "lat": 23,
-        "long": 234,
-      },
-    ]
-  }
-  title="something"
-/>
+<section
+  className="event-components"
+>
+  <Event
+    category="concert"
+    location={
+      Array [
+        Object {
+          "lat": 23,
+          "long": 234,
+        },
+      ]
+    }
+    title="something"
+  />
+</section>
 `;

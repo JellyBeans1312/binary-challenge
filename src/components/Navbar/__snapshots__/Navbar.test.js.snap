@@ -2,20 +2,26 @@
 
 exports[`Navbar should match snapshot 1`] = `
 <Fragment>
-  <nav>
+  <nav
+    className="nav"
+  >
     <NavLink
+      className="nav-button"
       exact={true}
+      onClick={[Function]}
       to="/"
     >
       All Events
     </NavLink>
     <NavLink
+      className="nav-button"
       exact={true}
       to="/near-you"
     >
       Search events by location
     </NavLink>
     <NavLink
+      className="nav-button"
       exact={true}
       to="filter-events"
     >

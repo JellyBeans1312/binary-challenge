@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Event should match snapshot 1`] = `
-<section>
+<article
+  className="event"
+>
   <h4 />
   <h4>
     Event
@@ -11,5 +13,5 @@ exports[`Event should match snapshot 1`] = `
     No available Address
   </p>
   <p />
-</section>
+</article>
 `;

@@ -1,0 +1,8 @@
+.event-container {
+  height: 85%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  margin: 10px 0;
+  color: #fff;
+}

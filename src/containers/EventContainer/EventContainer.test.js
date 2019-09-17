@@ -21,11 +21,6 @@ describe('EventContainer', () => {
     expect(wrapper).toMatchSnapshot()
   });
 
-  it('should be an empty object if events is undefined', () => {
-    shallow(<EventContainer events={undefined}/>)
-    expect(wrapper).toEqual({})
-  });
-
   describe('mapStateToProps', () => {
     it('should return an array of events', () => {
       const mockState = {

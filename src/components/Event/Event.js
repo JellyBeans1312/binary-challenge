@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { getAddress } from '../../apiCalls/apiCalls'
+import { getAddress } from '../../apiCalls/apiCalls';
+import './Event.css'
 
 export class Event extends Component {
   constructor(props) {
@@ -28,13 +29,13 @@ export class Event extends Component {
     const { title } = this.props 
     const { formattedAddress, trimDesc } = this.state
     return (
-      <section>
+      <article className='event'>
         <h4>{!title && 'No available title'}</h4>
         <h4>{title}</h4>
         <p>{trimDesc}</p>
         <p>{!formattedAddress && 'No available Address'}</p>
         <p>{formattedAddress}</p>
-      </section>
+      </article>
     )
   }
 }
