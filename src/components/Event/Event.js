@@ -10,6 +10,17 @@ export class Event extends Component {
       trimDesc: ''
     }
   }
+
+  componentDidUpdate = async (prevProps) => {
+    if (this.props.location !== prevProps.location) {
+      const { location } = this.props
+      const geoResults = await getAddress(location[1], location[0])
+      const formattedAddress = geoResults.find(address => address)
+      this.setState({ formattedAddress })
+      this.trimDescription()
+    }
+  }
+
   componentDidMount = async () => {
     const { location } = this.props
     const geoResults = await getAddress(location[1], location[0])
