@@ -5,6 +5,7 @@ import EventContainer from '../../containers/EventContainer/EventContainer';
 import SearchLocation from '../../containers/SearchLocation/SearchLocation';
 import { getEvents } from '../../apiCalls/apiCalls';
 import './Navbar.css'
+import PropTypes from 'prop-types';
 
 export const Navbar = ({ addEvents }) =>  {
    const sendEvents = async () => {
@@ -28,3 +29,7 @@ export const Navbar = ({ addEvents }) =>  {
     )
 }
 
+
+Navbar.propTypes = {
+  addEvents: PropTypes.func.isRequired
+}

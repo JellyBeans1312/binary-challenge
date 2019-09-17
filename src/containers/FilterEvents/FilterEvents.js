@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Event } from '../../components/Event/Event';
 import { connect } from 'react-redux';
-import './FilterEvents.css'
+import './FilterEvents.css';
+import PropTypes from 'prop-types';
 
 export class FilterEvents extends Component {
   constructor() {
@@ -114,3 +115,7 @@ export const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps)(FilterEvents)
+
+FilterEvents.propTypes = {
+  events: PropTypes.array.isRequired
+}

@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux'; 
 import { Event } from '../../components/Event/Event'
-import './EventContainer.css'
+import './EventContainer.css';
+import PropTypes from 'prop-types';
 
 export const EventContainer = ({ events }) => {
   const eventCards = events.map(event => {
@@ -24,3 +25,7 @@ export const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(EventContainer)
+
+EventContainer.propTypes = {
+  events: PropTypes.array.isRequired
+}

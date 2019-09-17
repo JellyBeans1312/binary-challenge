@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { searchEvent } from '../../apiCalls/apiCalls'
 import { connect } from 'react-redux';
 import { addEvents } from '../../actions';
+import PropTypes from 'prop-types';
 
 export class Search extends Component {
   constructor() {
@@ -49,3 +50,7 @@ export const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(null, mapDispatchToProps)(Search)
+
+Search.propTypes = {
+  addEvents: PropTypes.func.isRequired
+}
