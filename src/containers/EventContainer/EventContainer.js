@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'; 
 import { Event } from '../../components/Event/Event'
+import './EventContainer.css'
 
 export const EventContainer = ({ events }) => {
   if(!events) {
@@ -15,12 +16,14 @@ export const EventContainer = ({ events }) => {
     />
   })
   return ( 
-    eventCards
+    <section className='event-components'>
+      {eventCards}
+    </section>
   )
 }
 
 export const mapStateToProps = state => ({
   events: state.events
-})
+});
 
 export default connect(mapStateToProps)(EventContainer)
