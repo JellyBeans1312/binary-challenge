@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Event } from '../../components/Event/Event';
 import { connect } from 'react-redux';
+import './FilterEvents.css'
 
 export class FilterEvents extends Component {
   constructor() {
