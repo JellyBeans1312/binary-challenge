@@ -10,7 +10,7 @@ exports[`App should match snapshot 1`] = `
     <h1
       className="app-name"
     >
-      something
+      Event Finder
     </h1>
     <span
       className="app-component"
