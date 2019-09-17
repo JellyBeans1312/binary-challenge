@@ -1,3 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App should match snapshot 1`] = `ShallowWrapper {}`;
+exports[`App should match snapshot 1`] = `
+<div
+  className="App"
+>
+  <header
+    className="App-header"
+  >
+    <h1>
+      something
+    </h1>
+    <Connect(Search) />
+  </header>
+  <Navbar />
+</div>
+`;
