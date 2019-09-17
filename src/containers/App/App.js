@@ -18,7 +18,7 @@ export class App extends Component {
 
     <div className="App">
       <header className="App-header">
-        <h1 className='app-name'>something</h1>
+        <h1 className='app-name'>Event Finder</h1>
         <span className='app-component'>
           <Search/>
         </span>

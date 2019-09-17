@@ -38,3 +38,15 @@ h1 {
   grid-area: 1 / 5 / 2 / 6;
   margin: auto;
 }
+
+form input{
+  height: 30px;
+  width: 220px;
+}
+
+form button {
+  height: 37px;
+  color: white;
+  background-color: #5C10B9;
+  border-color: white;
+}
