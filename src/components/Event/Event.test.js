@@ -47,7 +47,6 @@ describe('Event', () => {
 
     const wrapper = shallow(<Event title=''/>)
     const title = wrapper.find('h4').at(0)
-    console.log(wrapper.find('h4'))
     expect(title).toEqual({})
   });
 })
