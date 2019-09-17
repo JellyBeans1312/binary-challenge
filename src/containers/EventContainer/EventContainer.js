@@ -4,9 +4,6 @@ import { Event } from '../../components/Event/Event'
 import './EventContainer.css'
 
 export const EventContainer = ({ events }) => {
-  if(!events) {
-    return null
-  }
   const eventCards = events.map(event => {
     return <Event 
       title={event.title}
