@@ -4,6 +4,7 @@ import FilterEvents from '../../containers/FilterEvents/FilterEvents'
 import EventContainer from '../../containers/EventContainer/EventContainer';
 import SearchLocation from '../../containers/SearchLocation/SearchLocation';
 import { getEvents } from '../../apiCalls/apiCalls';
+import './Navbar.css'
 
 export const Navbar = ({ addEvents }) =>  {
    const sendEvents = async () => {
@@ -12,10 +13,10 @@ export const Navbar = ({ addEvents }) =>  {
   }
     return (
       <>
-        <nav>
-        <NavLink exact to='/' onClick={sendEvents}>All Events</NavLink>
-        <NavLink exact to='/near-you'>Search events by location</NavLink>
-        <NavLink exact to='filter-events'>Filter</NavLink>
+        <nav className='nav'>
+        <NavLink exact to='/' onClick={sendEvents} className='nav-button'>All Events</NavLink>
+        <NavLink exact to='/near-you' className='nav-button'>Search events by location</NavLink>
+        <NavLink exact to='filter-events' className='nav-button'>Filter</NavLink>
         </nav>
         <section>
           <Route exact path='/' component={EventContainer}/>
