@@ -18,8 +18,10 @@ export class App extends Component {
 
     <div className="App">
       <header className="App-header">
-        <h1>something</h1>
-        <Search/>
+        <h1 className='app-name'>something</h1>
+        <span className='app-component'>
+          <Search/>
+        </span>
       </header>
       <Navbar addEvents={this.props.addEvents}/>
     </div>
