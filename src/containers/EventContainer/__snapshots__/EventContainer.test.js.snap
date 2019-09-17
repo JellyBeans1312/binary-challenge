@@ -1,3 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`EventContainer should matchsnapshot 1`] = `ShallowWrapper {}`;
+exports[`EventContainer should matchsnapshot 1`] = `
+<Event
+  category="concert"
+  location={
+    Array [
+      Object {
+        "lat": 23,
+        "long": 234,
+      },
+    ]
+  }
+  title="something"
+/>
+`;

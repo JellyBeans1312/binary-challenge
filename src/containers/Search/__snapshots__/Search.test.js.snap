@@ -1,3 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Search should match snapshot 1`] = `ShallowWrapper {}`;
+exports[`Search should match snapshot 1`] = `
+<div>
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      onChange={[Function]}
+      placeholder="Search for an event"
+      type="text"
+      value=""
+    />
+    <button>
+      Search
+    </button>
+  </form>
+</div>
+`;

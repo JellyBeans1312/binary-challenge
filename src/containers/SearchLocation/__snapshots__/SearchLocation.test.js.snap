@@ -1,3 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SearchLocation should match snapshot 1`] = `ShallowWrapper {}`;
+exports[`SearchLocation should match snapshot 1`] = `
+<section>
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      name="city"
+      onChange={[Function]}
+      placeholder="Enter a city"
+      type="text"
+      value=""
+    />
+    <input
+      name="state"
+      onChange={[Function]}
+      placeholder="Enter a state (CO format)"
+      type="text"
+      value=""
+    />
+    <button>
+      Search by location
+    </button>
+  </form>
+  <Connect(EventContainer) />
+</section>
+`;

@@ -5,7 +5,8 @@ import { FilterEvents, mapStateToProps }from "./FilterEvents";
 describe("FilterEvents ", () => {
   let wrapper;
   const mockEvents = [
-    { title: "something", category: 'concert', location: [{lat: 23, long: 234}] }
+    { title: "something", category: 'concert', location: [{lat: 23, long: 234}] },
+    { title: "else", category: 'concert', location: [{lat: 234, long: 2345}] }
   ];
 
   beforeEach(() => {

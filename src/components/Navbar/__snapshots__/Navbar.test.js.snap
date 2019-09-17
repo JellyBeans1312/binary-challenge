@@ -1,3 +1,67 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Navbar should match snapshot 1`] = `ShallowWrapper {}`;
+exports[`Navbar should match snapshot 1`] = `
+<Fragment>
+  <nav>
+    <NavLink
+      exact={true}
+      to="/"
+    >
+      All Events
+    </NavLink>
+    <NavLink
+      exact={true}
+      to="/near-you"
+    >
+      Search events by location
+    </NavLink>
+    <NavLink
+      exact={true}
+      to="filter-events"
+    >
+      Filter
+    </NavLink>
+  </nav>
+  <section>
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(EventContainer)",
+          "type": [Function],
+        }
+      }
+      exact={true}
+      path="/"
+    />
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(SearchLocation)",
+          "type": [Function],
+        }
+      }
+      exact={true}
+      path="/near-you"
+    />
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(FilterEvents)",
+          "type": [Function],
+        }
+      }
+      exact={true}
+      path="/filter-events"
+    />
+  </section>
+</Fragment>
+`;
