@@ -13,7 +13,7 @@ export const getEvents = async () => {
     const result = await response.json()
     return result.results
   } catch(error) {
-    console.log(error);
+    throw new Error('Failed to get events')
   }
 }
 
@@ -33,7 +33,7 @@ export const searchEvent = async (searchParam) => {
     return result.results
 
   } catch(error) {
-    throw new Error(error)
+    throw new Error('Failed to find event, please try again later')
   }
 }
 
@@ -45,7 +45,7 @@ export const getAddress = async (lat, long) => {
       return result.formatted_address
     });
   } catch(error) {
-    console.log(error)
+    throw new Error('Failed to find address')
   }
 }
 
@@ -55,7 +55,7 @@ export const getLocation = async (city, state) => {
     const result = await response.json();
     return result.results
   } catch(error) {
-    console.log(error)
+    throw new Error('Failed to get coordinates')
   }
 }
 
@@ -73,7 +73,7 @@ export const getEventsByLocation = async (lat, long) => {
     const result = await response.json()
     return result
   } catch(error) {
-    console.log(error)
+    throw new Error('Failed to get event from coordinates')
   }
 }
 
