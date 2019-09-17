@@ -35,6 +35,11 @@ describe('Event', () => {
     expect(wrapper.state('trimDesc')).toEqual('Its an event...')
   });
 
+  it('should check if props have changed to run an update', () => {
+    wrapper.setProps({ location: [4123413, 1235153]})
+    expect(getAddress).toHaveBeenCalled()
+  })
+
   it('should call getAddress on mounting', () => {
     expect(getAddress).toHaveBeenCalled()
   });
