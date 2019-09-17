@@ -7,10 +7,16 @@ exports[`App should match snapshot 1`] = `
   <header
     className="App-header"
   >
-    <h1>
+    <h1
+      className="app-name"
+    >
       something
     </h1>
-    <Connect(Search) />
+    <span
+      className="app-component"
+    >
+      <Connect(Search) />
+    </span>
   </header>
   <Navbar />
 </div>
