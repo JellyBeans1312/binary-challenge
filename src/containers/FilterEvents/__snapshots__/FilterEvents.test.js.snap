@@ -1,3 +1,73 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FilterEvents  should match snapshot 1`] = `ShallowWrapper {}`;
+exports[`FilterEvents  should match snapshot 1`] = `
+<section>
+  <div>
+    <fieldset>
+      <h3>
+        Filter By Genre
+      </h3>
+      <label
+        htmlFor="show all"
+      >
+        Show All
+      </label>
+      <input
+        name="genre"
+        onClick={[Function]}
+        placeholder="radio buttons"
+        type="radio"
+        value="show all"
+      />
+      <label
+        htmlFor="concert"
+      >
+        concert
+      </label>
+      <input
+        name="genre"
+        onClick={[Function]}
+        placeholder="radio buttons"
+        type="radio"
+        value="concert"
+      />
+    </fieldset>
+  </div>
+  <div
+    className="event-container"
+  >
+    <div
+      className="event-container"
+    >
+      <Event
+        category="concert"
+        location={
+          Array [
+            Object {
+              "lat": 23,
+              "long": 234,
+            },
+          ]
+        }
+        title="something"
+      />
+    </div>
+    <div
+      className="event-container"
+    >
+      <Event
+        category="concert"
+        location={
+          Array [
+            Object {
+              "lat": 234,
+              "long": 2345,
+            },
+          ]
+        }
+        title="else"
+      />
+    </div>
+  </div>
+</section>
+`;
