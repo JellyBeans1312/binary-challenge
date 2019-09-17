@@ -89,7 +89,7 @@ export class FilterEvents extends Component {
       <section>
         <div>
           <fieldset>
-            <h3>Filter By Genre</h3>
+            <h3>Filter By Category</h3>
             <label htmlFor="show all">Show All</label>
             <input
               type="radio"
