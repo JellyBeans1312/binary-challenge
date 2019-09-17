@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { getAddress } from '../../apiCalls/apiCalls';
-import './Event.css'
+import './Event.css';
+import PropTypes from 'prop-types';
 
 export class Event extends Component {
   constructor(props) {
@@ -49,4 +50,10 @@ export class Event extends Component {
       </article>
     )
   }
+}
+
+Event.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  location: PropTypes.array.isRequired
 }

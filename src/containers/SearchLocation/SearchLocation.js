@@ -3,6 +3,7 @@ import { getLocation, getEventsByLocation } from '../../apiCalls/apiCalls';
 import { addEvents } from '../../actions/'
 import { connect } from 'react-redux';
 import EventContainer  from '../EventContainer/EventContainer';
+import PropTypes from 'prop-types';
 
 export class SearchLocation extends Component {
   constructor() {
@@ -63,3 +64,7 @@ export const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(null, mapDispatchToProps)(SearchLocation)
+
+SearchLocation.propTypes = {
+  addEvents: PropTypes.func.isRequired
+}

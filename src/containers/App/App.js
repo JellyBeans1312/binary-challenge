@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { addEvents } from '../../actions';
 import Search from '..//Search/Search';
 import { Navbar } from '../../components/Navbar/Navbar'
+import PropTypes from 'prop-types';
 
 export class App extends Component {
 
@@ -34,3 +35,8 @@ export const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(null, mapDispatchToProps)(App);
+
+
+App.propTypes = {
+  addEvents: PropTypes.func.isRequired
+}
