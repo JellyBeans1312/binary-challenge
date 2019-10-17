@@ -1,4 +1,4 @@
-# Tune In Later
+# Event Finder
 
 Event tracker is an application geared toward the lazy individual who wants to know what events are coming up / going on. While fetching to the PredictHQ API, a user can see 10 upcoming events around the globe. Clicking on the Searching by location tab will allow a more precise representation of events once you pass in a city and state. A user is also able to filter the current set of events based on the category that they fall in. There will be more added to this application in the coming weeks so stay tuned...
 
